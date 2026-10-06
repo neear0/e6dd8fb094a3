@@ -6,6 +6,15 @@
 <meta name="robots" content="noindex, nofollow">
 <title>BESOL AGENCY | Zateplenie a obnova domov</title>
 <meta name="description" content="Zateplenie a komplexná obnova bytových domov vrátane termovízie, financovania zo ŠFRB a energetického certifikátu.">
+<meta name="theme-color" content="#0A1633">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='14' y='2' width='16' height='16' fill='%23D7182A'/%3E%3Crect x='2' y='8' width='10' height='10' fill='%235E9F33'/%3E%3Crect x='2' y='20' width='28' height='10' fill='%231F4E9C'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:title" content="BESOL AGENCY | Zateplenie a obnova domov">
+<meta property="og:description" content="Zateplenie a komplexná obnova bytových domov vrátane termovízie, financovania zo ŠFRB a energetického certifikátu.">
+<meta property="og:image" content="https://neear0.github.io/e6dd8fb094a3/assets/og/b.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&family=Red+Hat+Text:wght@400;500;600&display=swap" rel="stylesheet">
@@ -22,6 +31,11 @@
   --hot:#F2542D;
   --warm:#F7D23E;
   --wrap:1220px;
+  --r:18px;
+  --r-sm:10px;
+  --dur-fast:.28s;
+  --dur-base:.7s;
+  --ease-out:cubic-bezier(.16,1,.3,1);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -38,7 +52,7 @@ h3{font-weight:700;font-size:1.3rem;line-height:1.2}
 p{margin:0 0 1em;max-width:60ch}
 .muted{color:var(--mist)}
 
-.top{position:sticky;top:0;z-index:20;background:rgba(10,22,51,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
+.top{position:sticky;top:0;z-index:20;background:var(--night);border-bottom:1px solid var(--rule)}
 .top .wrap{display:flex;align-items:center;gap:28px;height:70px}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
 .mark{display:grid;grid-template-columns:10px 10px;grid-template-rows:10px 10px;gap:3px}
@@ -50,7 +64,8 @@ p{margin:0 0 1em;max-width:60ch}
 .nav{display:flex;gap:26px;margin-left:auto}
 .nav a{text-decoration:none;color:var(--mist);font-weight:500}
 .nav a:hover{color:#fff}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 24px;border-radius:999px;font-weight:600;text-decoration:none;background:var(--warm);color:var(--night);border:0;font:600 1rem "Red Hat Text",sans-serif;cursor:pointer}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 24px;border-radius:var(--r-sm);font-weight:600;text-decoration:none;background:var(--warm);color:var(--night);border:0;font:600 1rem "Red Hat Text",sans-serif;cursor:pointer}
+.btn{transition:background-color var(--dur-fast) var(--ease-out)}
 .btn:hover{background:#fff}
 .btn.line{background:transparent;color:#fff;box-shadow:inset 0 0 0 1.5px var(--rule)}
 .btn.line:hover{box-shadow:inset 0 0 0 1.5px var(--ice)}
@@ -63,9 +78,9 @@ p{margin:0 0 1em;max-width:60ch}
 .hero h1{margin-bottom:26px}
 .hero .lead{font-size:1.2rem;color:var(--mist);max-width:44ch;margin-bottom:34px}
 .ctas{display:flex;gap:12px;flex-wrap:wrap}
-.thermo{background:#071029;border:1px solid var(--rule);border-radius:20px;padding:28px 28px 24px}
+.thermo{background:#071029;border:1px solid var(--rule);border-radius:var(--r);padding:28px 28px 24px}
 .scene{display:grid;grid-template-columns:1fr 26px;gap:16px;align-items:stretch}
-.frame{background:linear-gradient(#050B1E 0 14%,#071029 14%);border-radius:8px;padding:9% 9% 0;overflow:hidden;position:relative}.frame::after{content:"";position:absolute;left:0;right:0;bottom:0;height:5%;background:#0B1B3F}.bldg{display:grid;grid-template-columns:repeat(8,1fr);gap:0;aspect-ratio:1/1.08;filter:blur(1.4px) saturate(1.15);border-top:6px solid #2A2FB8}
+.frame{background:linear-gradient(#050B1E 0 14%,#071029 14%);border-radius:var(--r-sm);padding:9% 9% 0;overflow:hidden;position:relative}.frame::after{content:"";position:absolute;left:0;right:0;bottom:0;height:5%;background:#0B1B3F}.bldg{display:grid;grid-template-columns:repeat(8,1fr);gap:0;aspect-ratio:1/1.08;filter:blur(1.4px) saturate(1.15);border-top:6px solid #2A2FB8}
 .cell{border-radius:2px;position:relative;transition:background-color .35s}
 .cell::after{content:"";position:absolute;inset:30% 18% 26%;background:var(--win,#fff);opacity:.55;border-radius:1px;transition:background-color .35s}
 .cell.door::after{inset:24% 30% 0}
@@ -77,7 +92,7 @@ p{margin:0 0 1em;max-width:60ch}
 input[type=range]{width:100%;accent-color:var(--warm);height:28px}
 .readout{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px;padding-top:16px;border-top:1px solid var(--rule)}
 .readout div{font-size:.9rem;color:var(--mist)}
-.readout strong{display:block;font:900 1.8rem/1.1 "Red Hat Display";color:#fff}
+.readout strong{font-variant-numeric:tabular-nums;display:block;font:900 1.8rem/1.1 "Red Hat Display";color:#fff}
 .disclaim{font-size:.78rem;color:#7F8FB0;margin:14px 0 0}
 
 section{padding:110px 0}
@@ -88,16 +103,16 @@ section{padding:110px 0}
 .head p{margin:0}
 
 /* thermography */
-.thermophoto{border-radius:16px;overflow:hidden;position:relative}
+.thermophoto{border-radius:var(--r);overflow:hidden;position:relative}
 .thermophoto img{width:100%}
-.thermophoto .tag{position:absolute;top:14px;padding:6px 12px;border-radius:999px;font-weight:600;font-size:.85rem;background:rgba(5,11,30,.8)}
+.thermophoto .tag{position:absolute;top:14px;padding:6px 12px;border-radius:var(--r-sm);font-weight:600;font-size:.85rem;background:rgba(5,11,30,.8)}
 .checks{list-style:none;padding:0;margin:28px 0 0}
 .checks li{padding:14px 0 14px 34px;border-top:1px solid var(--rule);position:relative}
 .checks li::before{content:"";position:absolute;left:0;top:22px;width:14px;height:14px;border-radius:50%;background:linear-gradient(135deg,var(--hot),var(--warm))}
 
 /* services */
 .svc{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.card{background:#fff;border-radius:20px;overflow:hidden;display:flex;flex-direction:column}
+.card{background:#fff;border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
 .card .img{aspect-ratio:16/9;overflow:hidden}
 .card img{width:100%;height:100%;object-fit:cover}
 .card .body{padding:32px 34px 36px}
@@ -127,7 +142,7 @@ section{padding:110px 0}
 /* references */
 .refs{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .ref{margin:0}
-.ref .ph{border-radius:14px;overflow:hidden;aspect-ratio:4/3}
+.ref .ph{border-radius:var(--r);overflow:hidden;aspect-ratio:4/3}
 .ref img{width:100%;height:100%;object-fit:cover}
 .ref figcaption{padding:14px 2px 0}
 .ref b{display:block;font-family:"Red Hat Display";font-size:1.12rem}
@@ -136,9 +151,9 @@ section{padding:110px 0}
 /* about */
 .about blockquote{margin:0 0 20px;font:700 clamp(1.4rem,2.4vw,2rem)/1.3 "Red Hat Display";color:#fff}
 .partners{display:flex;gap:16px;flex-wrap:wrap;margin-top:36px}
-.partners span{background:#fff;border-radius:12px;padding:14px 20px;display:grid;place-items:center}
+.partners span{background:#fff;border-radius:var(--r-sm);padding:14px 20px;display:grid;place-items:center}
 .partners img{height:30px;width:auto}
-.about .photo{border-radius:20px;overflow:hidden;aspect-ratio:4/3}
+.about .photo{border-radius:var(--r);overflow:hidden;aspect-ratio:4/3}
 .about .photo img{width:100%;height:100%;object-fit:cover}
 
 /* contact */
@@ -149,29 +164,36 @@ section{padding:110px 0}
 .who .r{color:var(--slate);font-size:.92rem}
 .who a{text-decoration:none;font-weight:600;color:var(--ink);margin-right:16px}
 .who a:hover{text-decoration:underline}
-form{background:#fff;border-radius:20px;padding:36px}
+form{background:#fff;border-radius:var(--r);padding:36px}
 label{display:block;font-weight:600;font-size:.92rem;margin-bottom:6px;color:var(--ink)}
-input:not([type=range]),textarea,select{width:100%;font:inherit;padding:13px 16px;border-radius:12px;border:1px solid #CBD5E5;background:var(--frost);margin-bottom:18px;color:var(--ink)}
+input:not([type=range]),textarea,select{width:100%;font:inherit;padding:13px 16px;border-radius:var(--r-sm);border:1px solid #CBD5E5;background:var(--frost);margin-bottom:18px;color:var(--ink)}
 textarea{min-height:120px;resize:vertical}
 .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 form .btn{background:var(--night);color:#fff}
 form .btn:hover{background:var(--deep)}
 .note{font-size:.88rem;color:var(--slate);margin:12px 0 0}
 
-footer{padding:56px 0 96px;color:var(--mist);font-size:.92rem;border-top:1px solid var(--rule)}
-footer .wrap{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
+footer{padding:0 0 96px;color:var(--mist);font-size:.92rem;position:relative}
+footer::before{content:"";display:block;height:4px;background:linear-gradient(90deg,#1B1F9E,#1BA8E8 30%,#4FE07A 48%,#F7E733 64%,#F2542D 84%,#FFF4F0);margin-bottom:80px}
+.exit{padding-bottom:56px;margin-bottom:36px;border-bottom:1px solid var(--rule)}
+.exit p{color:#fff;font-size:1.2rem;margin:0 0 10px}
+.exit-tel{display:block;color:#fff;font:900 clamp(2.2rem,8vw,7.4rem)/1 "Red Hat Display";letter-spacing:-.03em;white-space:nowrap}
+.exit-tel:hover{color:var(--warm)}
+.exit-mail{display:inline-block;margin-top:18px;font-size:1.3rem;color:var(--ice)}
+.legal{display:grid;grid-template-columns:auto 2fr 1fr auto;gap:40px;align-items:start}
 footer p{margin:0 0 6px}
 footer a{text-decoration:none}
 footer a:hover{color:#fff}
 
-.pv{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:50;background:#fff;color:var(--ink);border-radius:999px;box-shadow:0 8px 28px rgba(0,0,0,.35);display:flex;align-items:center;gap:2px;padding:5px;font-size:.85rem}
+.pv{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:50;background:#fff;color:var(--ink);border-radius:var(--r-sm);box-shadow:0 8px 28px rgba(0,0,0,.35);display:flex;align-items:center;gap:2px;padding:5px;font-size:.85rem}
 .pv span{padding:0 10px;color:var(--slate)}
-.pv a{padding:7px 13px;border-radius:999px;text-decoration:none;font-weight:600}
+.pv a{padding:12px 15px;border-radius:var(--r-sm);text-decoration:none;font-weight:600}
 .pv a[aria-current]{background:var(--night);color:#fff}
 
 @media (max-width:960px){
   .nav,.top .btn{display:none}
-  .burger{display:inline-flex;margin-left:auto;background:none;color:#fff;border:1.5px solid var(--rule);border-radius:999px;padding:8px 16px;font:600 1rem "Red Hat Text";cursor:pointer}
+  .burger{display:inline-flex;margin-left:auto;background:none;color:#fff;border:1.5px solid var(--rule);border-radius:var(--r-sm);padding:8px 16px;font:600 1rem "Red Hat Text";cursor:pointer}
+  .top.open .nav a{padding:12px 0;font-size:1.1rem}
   .top.open .nav{display:flex;position:absolute;top:70px;left:0;right:0;flex-direction:column;background:var(--night);padding:20px 24px;border-bottom:1px solid var(--rule)}
   .hero-grid,.split,.head,.contact{grid-template-columns:1fr;gap:36px}
   .svc{grid-template-columns:1fr}
@@ -180,7 +202,7 @@ footer a:hover{color:#fff}
   .steps{grid-template-columns:1fr 1fr;gap:36px 24px}
   .steps li::after{display:none}
   .refs{grid-template-columns:1fr 1fr}
-  footer .wrap{grid-template-columns:1fr}
+  .legal{grid-template-columns:1fr;gap:20px}
   section{padding:80px 0}
 }
 @media (max-width:600px){
@@ -192,13 +214,15 @@ footer a:hover{color:#fff}
   form{padding:24px 20px}
   .readout strong{font-size:1.45rem}
 }
+::selection{background:#F7D23E;color:#0A1633}
+p{text-wrap:pretty}
 </style>
 </head>
 <body>
 
 <header class="top" id="top">
   <div class="wrap">
-    <a class="brand" href="#" aria-label="BESOL AGENCY, úvod">
+    <a class="brand" href="./" aria-label="BESOL AGENCY, úvod">
       <span class="mark" aria-hidden="true"><i></i><i></i><i></i></span>
       <span class="wordmark">BESOL<span>agency</span></span>
     </a>
@@ -209,8 +233,8 @@ footer a:hover{color:#fff}
       <a href="#referencie">Referencie</a>
       <a href="#kontakt">Kontakt</a>
     </nav>
-    <a class="btn" href="#kontakt">Nezáväzná obhliadka</a>
-    <button class="burger" aria-expanded="false" aria-controls="top" onclick="const t=document.getElementById('top');const o=t.classList.toggle('open');this.setAttribute('aria-expanded',o)">Menu</button>
+    <a class="btn" href="#kontakt">Objednať obhliadku</a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="top">Menu</button>
   </div>
 </header>
 
@@ -269,7 +293,7 @@ footer a:hover{color:#fff}
   <div class="wrap">
     <div class="head">
       <h2>Všetko pre obnovu domu pod jednou strechou</h2>
-      <p class="muted">Máme vlastné systémové lešenie, stroje a partie. Preto vieme dodržať termíny aj na väčších domoch.</p>
+      <p class="muted">Máme vlastné systémové lešenie, stroje a partie. Na lešenie ani stroje nečakáme na nikoho iného.</p>
     </div>
     <div class="svc">
       <article class="card">
@@ -357,10 +381,10 @@ footer a:hover{color:#fff}
 <section class="about">
   <div class="wrap split">
     <div>
-      <h2 style="margin-bottom:28px">Viac ako desať rokov na stavbách po celom Slovensku</h2>
+      <h2 style="margin-bottom:28px">Od roku 2013 na stavbách po celom Slovensku</h2>
       <p class="muted">BESOL AGENCY je realizačná firma z Orovnice pri Novej Bani. Licencie TSÚS na kontaktné zatepľovacie systémy, pravidelné školenia u výrobcov a overené materiály sú pre nás samozrejmosť.</p>
       <blockquote style="margin-top:32px">„Spokojný zákazník je pre nás výhra a splnenie toho najvyššieho cieľa.“</blockquote>
-      <p class="muted"><b style="color:#fff">Vladimír Bratko</b>, konateľ</p>
+      <p class="muted">Tím BESOL o obnove bytového domu vo Vrábľoch</p>
       <div class="partners" aria-label="Materiáloví partneri">
         <span><img src="../assets/img/logo_weber.png" alt="Weber"></span>
         <span><img src="../assets/img/logo_stomix.png" alt="Stomix"></span>
@@ -375,7 +399,7 @@ footer a:hover{color:#fff}
   <div class="wrap contact">
     <div>
       <h2>Objednajte si obhliadku domu</h2>
-      <p class="muted" style="margin-top:20px">Obhliadka je zadarmo. Ozveme sa do dvoch pracovných dní.</p>
+      <p class="muted" style="margin-top:20px">Napíšte adresu domu a čo treba riešiť. Ozveme sa a dohodneme termín.</p>
       <ul class="who">
         <li><b>Vladimír Bratko</b> <span class="r">konateľ</span><br><a href="tel:+421908198707">+421 908 198 707</a><a href="mailto:besol@besol.sk">besol@besol.sk</a></li>
         <li><b>Ing. Silvia Tršová</b> <span class="r">kancelária</span><br><a href="tel:+421917360985">+421 917 360 985</a><a href="mailto:kancelaria@besol.sk">kancelaria@besol.sk</a></li>
@@ -403,14 +427,17 @@ footer a:hover{color:#fff}
 
 <footer>
   <div class="wrap">
-    <div>
-      <p class="wordmark" style="color:#fff;margin-bottom:14px">BESOL<span style="font-weight:500;color:var(--ice);margin-left:6px">agency</span></p>
-      <p>BESOL, s. r. o., 966 52 Orovnica 18</p>
-      <p>IČO 47 579 145, DIČ 2023968276</p>
-      <p>OR Okresného súdu Banská Bystrica, oddiel Sro, vložka č. 26045/S</p>
+    <div class="exit">
+      <p>Chcete vidieť, kde stráca teplo váš dom?</p>
+      <a class="exit-tel" href="tel:+421908198707">+421 908 198 707</a>
+      <a class="exit-mail" href="mailto:besol@besol.sk">besol@besol.sk</a>
     </div>
-    <div><p><a href="#termovizia">Termovízia</a></p><p><a href="#sluzby">Služby</a></p><p><a href="#financovanie">Financovanie</a></p><p><a href="#referencie">Referencie</a></p></div>
-    <div><p><a href="tel:+421908198707">+421 908 198 707</a></p><p><a href="mailto:besol@besol.sk">besol@besol.sk</a></p><p style="margin-top:18px">© 2026 BESOL AGENCY</p></div>
+    <div class="legal">
+      <p class="wordmark" style="color:#fff">BESOL<span style="font-weight:500;color:var(--ice);margin-left:6px">agency</span></p>
+      <p>BESOL, s. r. o., 966 52 Orovnica 18<br>IČO 47 579 145, DIČ 2023968276<br>OR Okresného súdu Banská Bystrica, oddiel Sro, vložka č. 26045/S</p>
+      <p><a href="#termovizia">Termovízia</a><br><a href="#financovanie">Financovanie</a><br><a href="#referencie">Referencie</a></p>
+      <p>© 2026 BESOL AGENCY</p>
+    </div>
   </div>
 </footer>
 
@@ -466,6 +493,16 @@ footer a:hover{color:#fff}
     ins.addEventListener('pointerdown',()=>ins.dataset.touched=1);
     ins.addEventListener('keydown',()=>ins.dataset.touched=1);
   }
+})();
+</script>
+<script>
+(function(){
+  var top=document.getElementById('top'),btn=top.querySelector('.burger');
+  function set(open){top.classList.toggle('open',open);btn.setAttribute('aria-expanded',open);document.documentElement.style.overflow=open?'hidden':''}
+  btn.addEventListener('click',function(){set(!top.classList.contains('open'))});
+  top.querySelectorAll('.nav a').forEach(function(a){a.addEventListener('click',function(){set(false)})});
+  addEventListener('keydown',function(e){if(e.key==='Escape'&&top.classList.contains('open')){set(false);btn.focus()}});
+  matchMedia('(min-width: 1001px)').addEventListener('change',function(){set(false)});
 })();
 </script>
 </body>

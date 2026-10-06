@@ -6,6 +6,15 @@
 <meta name="robots" content="noindex, nofollow">
 <title>BESOL AGENCY | Obnova bytových domov</title>
 <meta name="description" content="Zatepľovanie a komplexná obnova bytových domov od A po Z, vrátane vybavenia financovania. Prenájom lešenia a stavebnej techniky.">
+<meta name="theme-color" content="#ECEDEA">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='14' y='2' width='16' height='16' fill='%23D7182A'/%3E%3Crect x='2' y='8' width='10' height='10' fill='%235E9F33'/%3E%3Crect x='2' y='20' width='28' height='10' fill='%231F4E9C'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:title" content="BESOL AGENCY | Obnova bytových domov">
+<meta property="og:description" content="Zatepľovanie a komplexná obnova bytových domov od A po Z, vrátane vybavenia financovania. Prenájom lešenia a stavebnej techniky.">
+<meta property="og:image" content="https://neear0.github.io/e6dd8fb094a3/assets/og/a.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&display=swap" rel="stylesheet">
@@ -20,6 +29,11 @@
   --green:#5E9F33;
   --blue:#1F4E9C;
   --wrap:1240px;
+  --dur-fast:.28s;
+  --dur-base:.7s;
+  --dur-slow:1.2s;
+  --ease-out:cubic-bezier(.16,1,.3,1);
+  --ease-io:cubic-bezier(.65,0,.35,1);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -37,7 +51,7 @@ p{margin:0 0 1em;max-width:62ch}
 .lead{font-size:1.2rem;color:var(--stone);max-width:46ch}
 
 /* header */
-.top{position:sticky;top:0;z-index:20;background:rgba(236,237,234,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top{position:sticky;top:0;z-index:20;background:var(--concrete);border-bottom:1px solid var(--line)}
 .top .wrap{display:flex;align-items:center;gap:32px;height:72px}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
 .mark{width:34px;height:34px;position:relative;flex:none}
@@ -61,6 +75,13 @@ p{margin:0 0 1em;max-width:62ch}
 .hero{padding:56px 0 0}
 .hero-grid{display:grid;grid-template-columns:6fr 6fr;gap:48px;align-items:end}
 .hero h1{margin-bottom:28px}
+.hero h1 .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.06em;margin-bottom:-.06em}
+.hero h1 .w>span{display:inline-block;animation:rise var(--dur-slow) var(--ease-out) both;animation-delay:calc(var(--i)*70ms + 120ms)}
+.hero-photo{animation:plaster var(--dur-slow) var(--ease-io) .2s both}
+.hero .lead,.hero .ctas{animation:fade var(--dur-base) var(--ease-out) .75s both}
+@keyframes rise{from{transform:translateY(110%) rotate(3deg)}}
+@keyframes plaster{from{clip-path:inset(100% 0 0 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes fade{from{opacity:0;transform:translateY(14px)}}
 .hero .lead{margin-bottom:32px}
 .hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:8px}
 .hero-photo{position:relative;aspect-ratio:4/3.3;overflow:hidden}
@@ -82,10 +103,11 @@ section{padding:110px 0}
 .ref.wide{grid-column:span 8}
 .ref .ph{aspect-ratio:4/3;overflow:hidden}
 .ref.wide .ph{aspect-ratio:16/8.4}
-.ref img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
-.ref:hover img{transform:scale(1.03)}
-.chips{display:flex;height:22px}
-.chips span{flex:1}
+.ref img{width:100%;height:100%;object-fit:cover}
+.chips{display:flex;height:34px}
+.chips span{flex:1;display:flex;align-items:center;padding:0 10px;font-size:.74rem;font-weight:600;letter-spacing:.02em;font-variant-numeric:tabular-nums}
+.chips span.l{color:rgba(36,40,44,.72)}
+.chips span.d{color:rgba(255,255,255,.82)}
 .ref .txt{padding:20px 22px 24px}
 .ref .where{font-size:.9rem;color:var(--stone);margin-bottom:6px}
 .ref h3{margin-bottom:8px}
@@ -160,7 +182,13 @@ textarea{min-height:120px;resize:vertical}
 .note{font-size:.85rem;color:var(--stone);margin-top:12px}
 
 footer{background:var(--graphite);color:#B9BDC1;padding:56px 0 90px;font-size:.92rem}
-footer .wrap{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
+footer .wrap{display:block}
+.exit{padding-bottom:56px;border-bottom:1px solid #3A3F45;margin-bottom:36px}
+.exit-k{color:#fff;font-size:1.2rem;margin:0 0 10px}
+.exit-tel{display:block;color:#fff;font-variation-settings:"wdth" 125;font-weight:900;font-size:clamp(2rem,7.4vw,6.6rem);line-height:1;letter-spacing:-.02em;white-space:nowrap}
+.exit-tel:hover{color:var(--red)}
+.exit-mail{display:inline-block;margin-top:18px;font-size:1.3rem;color:#fff;border-bottom:2px solid var(--red)}
+.legal{display:grid;grid-template-columns:auto 2fr 1fr auto;gap:40px;align-items:start}
 footer .wordmark{color:#fff}
 footer a{text-decoration:none}
 footer a:hover{color:#fff}
@@ -169,12 +197,13 @@ footer p{margin:0 0 6px}
 /* preview switcher */
 .pv{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:50;background:#fff;border:1px solid var(--line);box-shadow:0 6px 24px rgba(0,0,0,.15);display:flex;align-items:center;gap:4px;padding:6px;font-size:.85rem}
 .pv span{padding:0 10px;color:var(--stone)}
-.pv a{padding:7px 12px;text-decoration:none;font-weight:600}
+.pv a{padding:12px 14px;text-decoration:none;font-weight:600}
 .pv a[aria-current]{background:var(--graphite);color:#fff}
 
 @media (max-width:960px){
   .nav,.top .btn{display:none}
   .burger{display:inline-flex;margin-left:auto;background:none;border:2px solid var(--graphite);padding:8px 12px;font:inherit;font-weight:700;cursor:pointer}
+  .top.open .nav a{padding:12px 0;font-size:1.1rem}
   .top.open .nav{display:flex;position:absolute;top:72px;left:0;right:0;flex-direction:column;background:var(--concrete);padding:20px 24px;border-bottom:1px solid var(--line)}
   .hero-grid,.sec-head,.benefit-grid,.about-grid,.contact-grid{grid-template-columns:1fr;gap:32px}
   .facts{grid-template-columns:1fr 1fr}
@@ -185,7 +214,7 @@ footer p{margin:0 0 6px}
   .svc article+article{border-left:0;border-top:1px solid var(--line)}
   .extras{grid-template-columns:1fr}
   .steps{grid-template-columns:1fr 1fr;gap:0 24px}
-  footer .wrap{grid-template-columns:1fr}
+  .legal{grid-template-columns:1fr;gap:20px}
   section{padding:80px 0}
 }
 @media (max-width:600px){
@@ -197,13 +226,15 @@ footer p{margin:0 0 6px}
   form{padding:24px}
   .people li{grid-template-columns:1fr}
 }
+::selection{background:#D7182A;color:#fff}
+p{text-wrap:pretty}
 </style>
 </head>
 <body>
 
 <header class="top" id="top">
   <div class="wrap">
-    <a class="brand" href="#" aria-label="BESOL AGENCY, úvod">
+    <a class="brand" href="./" aria-label="BESOL AGENCY, úvod">
       <span class="mark" aria-hidden="true"><i></i><i></i><i></i></span>
       <span class="wordmark">BESOL<small>AGENCY</small></span>
     </a>
@@ -215,7 +246,7 @@ footer p{margin:0 0 6px}
       <a href="#kontakt">Kontakt</a>
     </nav>
     <a class="btn" href="tel:+421908198707">+421 908 198 707</a>
-    <button class="burger" aria-expanded="false" aria-controls="top" onclick="const t=document.getElementById('top');const o=t.classList.toggle('open');this.setAttribute('aria-expanded',o)">Menu</button>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="top">Menu</button>
   </div>
 </header>
 
@@ -224,7 +255,7 @@ footer p{margin:0 0 6px}
   <div class="wrap">
     <div class="hero-grid">
       <div>
-        <h1>Obnovíme váš bytový dom od A po Z.</h1>
+        <h1><span class="w"><span style="--i:0">Obnovíme</span></span> <span class="w"><span style="--i:1">váš</span></span> <span class="w"><span style="--i:2">bytový</span></span> <span class="w"><span style="--i:3">dom</span></span> <span class="w"><span style="--i:4">od</span></span> <span class="w"><span style="--i:5">A</span></span> <span class="w"><span style="--i:6">po</span></span> <span class="w"><span style="--i:7">Z.</span></span></h1>
         <p class="lead">Zateplenie, strecha, balkóny aj spoločné priestory. Vybavíme projekt, financovanie zo ŠFRB a úver v banke. Vy nemusíte nič riešiť.</p>
         <div class="ctas">
           <a class="btn" href="#kontakt">Dohodnúť obhliadku</a>
@@ -249,12 +280,12 @@ footer p{margin:0 0 6px}
   <div class="wrap">
     <div class="sec-head">
       <h2>Domy, ktoré sme obnovili</h2>
-      <p>Farby fasády vyberáme spolu s vlastníkmi bytov. Pod každou fotkou je paleta odtieňov daného domu.</p>
+      <p>Farby fasády vyberáme spolu s vlastníkmi bytov. Pod každou fotkou sú tri odtiene, ktoré sme z nej priamo odčítali, aj s kódom farby.</p>
     </div>
     <div class="fan">
       <article class="ref wide">
         <div class="ph"><img src="../assets/img/1_4.jpg" alt="Obnovený bytový dom v Tlmačoch" loading="lazy"></div>
-        <div class="chips" aria-hidden="true"><span style="background:#E3D6BE"></span><span style="background:#C9A27A"></span><span style="background:#A0502F"></span></div>
+        <div class="chips" aria-label="Odtiene z fotky: #BDAF9F, #91735D, #6E3023"><span class="l" style="background:#BDAF9F">#BDAF9F</span><span class="d" style="background:#91735D">#91735D</span><span class="d" style="background:#6E3023">#6E3023</span></div>
         <div class="txt">
           <div class="where">Tlmače</div>
           <h3>Bytový dom, komplexná obnova</h3>
@@ -263,7 +294,7 @@ footer p{margin:0 0 6px}
       </article>
       <article class="ref">
         <div class="ph"><img src="../assets/img/img_3820_0.jpg" alt="Bytové domy v Hronskom Beňadiku" loading="lazy"></div>
-        <div class="chips" aria-hidden="true"><span style="background:#F2F2EF"></span><span style="background:#B03A2E"></span><span style="background:#2E3540"></span></div>
+        <div class="chips" aria-label="Odtiene z fotky: #BDBEBE, #55221D, #A26E70"><span class="l" style="background:#BDBEBE">#BDBEBE</span><span class="d" style="background:#55221D">#55221D</span><span class="d" style="background:#A26E70">#A26E70</span></div>
         <div class="txt">
           <div class="where">Hronský Beňadik</div>
           <h3>Bytové domy</h3>
@@ -272,7 +303,7 @@ footer p{margin:0 0 6px}
       </article>
       <article class="ref">
         <div class="ph"><img src="../assets/img/img_0355.jpg" alt="Bytový dom vo Vrábľoch" loading="lazy"></div>
-        <div class="chips" aria-hidden="true"><span style="background:#F1F1EE"></span><span style="background:#8DB65A"></span><span style="background:#5E6166"></span></div>
+        <div class="chips" aria-label="Odtiene z fotky: #A7B0BE, #253140, #505B6B"><span class="l" style="background:#A7B0BE">#A7B0BE</span><span class="d" style="background:#253140">#253140</span><span class="d" style="background:#505B6B">#505B6B</span></div>
         <div class="txt">
           <div class="where">Vráble</div>
           <h3>Bytový dom</h3>
@@ -281,7 +312,7 @@ footer p{margin:0 0 6px}
       </article>
       <article class="ref">
         <div class="ph"><img src="../assets/img/12.jpg" alt="Bytový dom v Malom Cetíne" loading="lazy"></div>
-        <div class="chips" aria-hidden="true"><span style="background:#ECECEA"></span><span style="background:#9AA0A6"></span><span style="background:#B9D7A5"></span></div>
+        <div class="chips" aria-label="Odtiene z fotky: #C9C8C8, #827B70, #393836"><span class="l" style="background:#C9C8C8">#C9C8C8</span><span class="d" style="background:#827B70">#827B70</span><span class="d" style="background:#393836">#393836</span></div>
         <div class="txt">
           <div class="where">Malý Cetín</div>
           <h3>Bytový dom</h3>
@@ -290,7 +321,7 @@ footer p{margin:0 0 6px}
       </article>
       <article class="ref">
         <div class="ph"><img src="../assets/img/20190819_162026.jpg" alt="Zrekonštruovaná umyváreň v materskej škole" loading="lazy"></div>
-        <div class="chips" aria-hidden="true"><span style="background:#FFFFFF"></span><span style="background:#7FB548"></span><span style="background:#C7B79C"></span></div>
+        <div class="chips" aria-label="Odtiene z fotky: #ACA08E, #766A5A, #C2CCD9"><span class="l" style="background:#ACA08E">#ACA08E</span><span class="d" style="background:#766A5A">#766A5A</span><span class="l" style="background:#C2CCD9">#C2CCD9</span></div>
         <div class="txt">
           <div class="where">Nová Baňa</div>
           <h3>Dve materské škôlky</h3>
@@ -299,7 +330,7 @@ footer p{margin:0 0 6px}
       </article>
       <article class="ref">
         <div class="ph"><img src="../assets/img/012_0.jpg" alt="Nová kúpeľňa v Domove sociálnych služieb Hrabiny" loading="lazy"></div>
-        <div class="chips" aria-hidden="true"><span style="background:#F4F4F2"></span><span style="background:#B79A78"></span><span style="background:#2C4E8A"></span></div>
+        <div class="chips" aria-label="Odtiene z fotky: #C8CAC9, #6E5A4D, #938377"><span class="l" style="background:#C8CAC9">#C8CAC9</span><span class="d" style="background:#6E5A4D">#6E5A4D</span><span class="d" style="background:#938377">#938377</span></div>
         <div class="txt">
           <div class="where">Hrabiny</div>
           <h3>Domov sociálnych služieb</h3>
@@ -308,7 +339,7 @@ footer p{margin:0 0 6px}
       </article>
       <article class="ref wide">
         <div class="ph"><img src="../assets/img/rska_samorin0.jpg" alt="Letecký pohľad na areál v Šamoríne" loading="lazy"></div>
-        <div class="chips" aria-hidden="true"><span style="background:#6E8F4E"></span><span style="background:#C9CCC6"></span><span style="background:#3E5F86"></span></div>
+        <div class="chips" aria-label="Odtiene z fotky: #70716E, #868D38, #404D1D"><span class="d" style="background:#70716E">#70716E</span><span class="d" style="background:#868D38">#868D38</span><span class="d" style="background:#404D1D">#404D1D</span></div>
         <div class="txt">
           <div class="where">Šamorín</div>
           <h3>Areál RŠKA, hydroizolácie a obklady</h3>
@@ -365,7 +396,7 @@ footer p{margin:0 0 6px}
   <div class="wrap">
     <div class="sec-head">
       <h2>Ako prebieha obnova</h2>
-      <p>Od prvej schôdze vlastníkov po odovzdanie hotového domu. Celý čas máte jednu kontaktnú osobu.</p>
+      <p>Od prvej schôdze vlastníkov po odovzdanie hotového domu.</p>
     </div>
     <ol class="steps">
       <li><h3>Obhliadka a termovízia</h3><p>Prídeme na dom, nafotíme úniky tepla a prejdeme s vami, čo treba opraviť.</p></li>
@@ -398,10 +429,10 @@ footer p{margin:0 0 6px}
 <section class="about" id="o-nas">
   <div class="wrap about-grid">
     <div>
-      <h2 style="margin-bottom:32px">Rodinná firma z Orovnice</h2>
-      <p>Viac ako desať rokov zatepľujeme, obnovujeme a rekonštruujeme stavby po celom Slovensku. Pracujeme pre správcovské spoločnosti, spoločenstvá vlastníkov bytov aj súkromných vlastníkov. Každú zákazku riešime podľa toho, čo konkrétny dom potrebuje.</p>
-      <blockquote style="margin-top:36px">„Robte to, čo milujete, a milujte to, čo robíte. Potom to pre vás nebude práca.“</blockquote>
-      <p class="sig"><b>Vladimír Bratko</b>, konateľ BESOL AGENCY</p>
+      <h2 style="margin-bottom:32px">Stavebná firma z Orovnice</h2>
+      <p>Od roku 2013 zatepľujeme, obnovujeme a rekonštruujeme stavby po celom Slovensku. Pracujeme pre správcovské spoločnosti, spoločenstvá vlastníkov bytov aj súkromných vlastníkov. Každú zákazku riešime podľa toho, čo konkrétny dom potrebuje.</p>
+      <blockquote style="margin-top:36px">„Veríme, že spoluprácou s nami získate lepšie a krajšie prostredie pre vaše bývanie.“</blockquote>
+      <p class="sig"><b>Vladimír Bratko</b>, majiteľ spoločnosti</p>
       <div class="partners" aria-label="Materiáloví partneri">
         <img src="../assets/img/logo_weber.png" alt="Weber">
         <img src="../assets/img/logo_stomix.png" alt="Stomix">
@@ -416,7 +447,7 @@ footer p{margin:0 0 6px}
   <div class="wrap contact-grid">
     <div>
       <h2>Napíšte nám o vašom dome</h2>
-      <p class="lead" style="margin-top:20px">Ozveme sa do dvoch pracovných dní a dohodneme obhliadku. Je zadarmo a nezáväzná.</p>
+      <p class="lead" style="margin-top:20px">Napíšte adresu domu a čo treba riešiť. Ozveme sa a dohodneme obhliadku.</p>
       <ul class="people">
         <li><div><b>Vladimír Bratko</b><div class="role">konateľ</div></div><div><a href="tel:+421908198707">+421 908 198 707</a><br><a href="mailto:besol@besol.sk">besol@besol.sk</a></div></li>
         <li><div><b>Ing. Silvia Tršová</b><div class="role">kancelária</div></div><div><a href="tel:+421917360985">+421 917 360 985</a><br><a href="mailto:kancelaria@besol.sk">kancelaria@besol.sk</a></div></li>
@@ -442,23 +473,30 @@ footer p{margin:0 0 6px}
 
 <footer>
   <div class="wrap">
-    <div>
-      <div class="wordmark" style="margin-bottom:18px">BESOL<small>AGENCY</small></div>
-      <p>BESOL, s. r. o., 966 52 Orovnica 18</p>
-      <p>IČO 47 579 145, DIČ 2023968276</p>
-      <p>Zapísaná v OR Okresného súdu Banská Bystrica, oddiel Sro, vložka č. 26045/S</p>
+    <div class="exit">
+      <p class="exit-k">Máte dom, ktorý potrebuje obnovu?</p>
+      <a class="exit-tel" href="tel:+421908198707">+421 908 198 707</a>
+      <a class="exit-mail" href="mailto:besol@besol.sk">besol@besol.sk</a>
     </div>
-    <div>
-      <p><a href="#sluzby">Služby</a></p><p><a href="#referencie">Referencie</a></p><p><a href="#o-nas">O nás</a></p><p><a href="#kontakt">Kontakt</a></p>
-    </div>
-    <div>
-      <p><a href="tel:+421908198707">+421 908 198 707</a></p>
-      <p><a href="mailto:besol@besol.sk">besol@besol.sk</a></p>
-      <p style="margin-top:18px">© 2026 BESOL AGENCY</p>
+    <div class="legal">
+      <span class="wordmark">BESOL<small>AGENCY</small></span>
+      <p>BESOL, s. r. o., 966 52 Orovnica 18<br>IČO 47 579 145, DIČ 2023968276<br>OR Okresného súdu Banská Bystrica, oddiel Sro, vložka č. 26045/S</p>
+      <p><a href="#referencie">Referencie</a><br><a href="#sluzby">Služby</a><br><a href="#kontakt">Kontakt</a></p>
+      <p>© 2026 BESOL AGENCY</p>
     </div>
   </div>
 </footer>
 
 <nav class="pv" aria-label="Prepínač návrhov"><span>Návrh</span><a href="../a/" aria-current="page">A</a><a href="../b/">B</a><a href="../c/">C</a><a href="../">Všetky</a></nav>
+<script>
+(function(){
+  var top=document.getElementById('top'),btn=top.querySelector('.burger');
+  function set(open){top.classList.toggle('open',open);btn.setAttribute('aria-expanded',open);document.documentElement.style.overflow=open?'hidden':''}
+  btn.addEventListener('click',function(){set(!top.classList.contains('open'))});
+  top.querySelectorAll('.nav a').forEach(function(a){a.addEventListener('click',function(){set(false)})});
+  addEventListener('keydown',function(e){if(e.key==='Escape'&&top.classList.contains('open')){set(false);btn.focus()}});
+  matchMedia('(min-width: 1001px)').addEventListener('change',function(){set(false)});
+})();
+</script>
 </body>
 </html>
