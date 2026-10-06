@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="sk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>BESOL AGENCY | Zateplenie a obnova domov</title>
+<meta name="description" content="Zateplenie a komplexná obnova bytových domov vrátane termovízie, financovania zo ŠFRB a energetického certifikátu.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&family=Red+Hat+Text:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --night:#0A1633;
+  --deep:#122550;
+  --rule:#26396A;
+  --ice:#8CCBFF;
+  --mist:#B7C6E0;
+  --frost:#F1F5FB;
+  --ink:#0A1633;
+  --slate:#4D5B78;
+  --hot:#F2542D;
+  --warm:#F7D23E;
+  --wrap:1220px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--night);color:#E4ECF8;font:400 17px/1.65 "Red Hat Text",system-ui,sans-serif}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--warm);outline-offset:3px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:"Red Hat Display",sans-serif;margin:0;line-height:1.05;text-wrap:balance}
+h1{font-weight:900;font-size:clamp(2.5rem,5vw,4.4rem);letter-spacing:-.015em}
+h2{font-weight:900;font-size:clamp(2rem,3.6vw,3.1rem);letter-spacing:-.02em}
+h3{font-weight:700;font-size:1.3rem;line-height:1.2}
+p{margin:0 0 1em;max-width:60ch}
+.muted{color:var(--mist)}
+
+.top{position:sticky;top:0;z-index:20;background:rgba(10,22,51,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
+.top .wrap{display:flex;align-items:center;gap:28px;height:70px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.mark{display:grid;grid-template-columns:10px 10px;grid-template-rows:10px 10px;gap:3px}
+.mark i:nth-child(1){background:#E3222F;grid-column:2}
+.mark i:nth-child(2){background:#5FA83A;grid-row:2;grid-column:1}
+.mark i:nth-child(3){background:#2B63C6;grid-row:2;grid-column:2}
+.wordmark{font-family:"Red Hat Display";font-weight:900;font-size:1.2rem;letter-spacing:.01em}
+.wordmark span{font-weight:500;color:var(--ice);margin-left:6px}
+.nav{display:flex;gap:26px;margin-left:auto}
+.nav a{text-decoration:none;color:var(--mist);font-weight:500}
+.nav a:hover{color:#fff}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 24px;border-radius:999px;font-weight:600;text-decoration:none;background:var(--warm);color:var(--night);border:0;font:600 1rem "Red Hat Text",sans-serif;cursor:pointer}
+.btn:hover{background:#fff}
+.btn.line{background:transparent;color:#fff;box-shadow:inset 0 0 0 1.5px var(--rule)}
+.btn.line:hover{box-shadow:inset 0 0 0 1.5px var(--ice)}
+.top .btn{padding:10px 18px}
+.burger{display:none}
+
+/* hero with thermal building */
+.hero{padding:64px 0 96px}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.hero h1{margin-bottom:26px}
+.hero .lead{font-size:1.2rem;color:var(--mist);max-width:44ch;margin-bottom:34px}
+.ctas{display:flex;gap:12px;flex-wrap:wrap}
+.thermo{background:#071029;border:1px solid var(--rule);border-radius:20px;padding:28px 28px 24px}
+.scene{display:grid;grid-template-columns:1fr 26px;gap:16px;align-items:stretch}
+.frame{background:linear-gradient(#050B1E 0 14%,#071029 14%);border-radius:8px;padding:9% 9% 0;overflow:hidden;position:relative}.frame::after{content:"";position:absolute;left:0;right:0;bottom:0;height:5%;background:#0B1B3F}.bldg{display:grid;grid-template-columns:repeat(8,1fr);gap:0;aspect-ratio:1/1.08;filter:blur(1.4px) saturate(1.15);border-top:6px solid #2A2FB8}
+.cell{border-radius:2px;position:relative;transition:background-color .35s}
+.cell::after{content:"";position:absolute;inset:30% 18% 26%;background:var(--win,#fff);opacity:.55;border-radius:1px;transition:background-color .35s}
+.cell.door::after{inset:24% 30% 0}
+.scale{border-radius:4px;background:linear-gradient(to top,#1B1F9E,#1BA8E8 30%,#4FE07A 48%,#F7E733 64%,#F2542D 84%,#FFF4F0);position:relative}
+.legend{display:flex;justify-content:space-between;gap:12px;font-size:.82rem;color:var(--mist);margin-top:10px}.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+.ctrl{margin-top:22px}
+.ctrl label{color:#fff;display:flex;justify-content:space-between;font-weight:600;margin-bottom:10px}
+.ctrl output{color:var(--warm);font-family:"Red Hat Display";font-weight:900}
+input[type=range]{width:100%;accent-color:var(--warm);height:28px}
+.readout{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px;padding-top:16px;border-top:1px solid var(--rule)}
+.readout div{font-size:.9rem;color:var(--mist)}
+.readout strong{display:block;font:900 1.8rem/1.1 "Red Hat Display";color:#fff}
+.disclaim{font-size:.78rem;color:#7F8FB0;margin:14px 0 0}
+
+section{padding:110px 0}
+.light{background:var(--frost);color:var(--ink)}
+.light .muted{color:var(--slate)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.head{display:grid;grid-template-columns:1fr 1fr;gap:64px;margin-bottom:56px;align-items:end}
+.head p{margin:0}
+
+/* thermography */
+.thermophoto{border-radius:16px;overflow:hidden;position:relative}
+.thermophoto img{width:100%}
+.thermophoto .tag{position:absolute;top:14px;padding:6px 12px;border-radius:999px;font-weight:600;font-size:.85rem;background:rgba(5,11,30,.8)}
+.checks{list-style:none;padding:0;margin:28px 0 0}
+.checks li{padding:14px 0 14px 34px;border-top:1px solid var(--rule);position:relative}
+.checks li::before{content:"";position:absolute;left:0;top:22px;width:14px;height:14px;border-radius:50%;background:linear-gradient(135deg,var(--hot),var(--warm))}
+
+/* services */
+.svc{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.card{background:#fff;border-radius:20px;overflow:hidden;display:flex;flex-direction:column}
+.card .img{aspect-ratio:16/9;overflow:hidden}
+.card img{width:100%;height:100%;object-fit:cover}
+.card .body{padding:32px 34px 36px}
+.card h3{font-size:1.7rem;margin-bottom:4px}
+.card .sub{color:var(--slate);margin-bottom:20px}
+.card ul{margin:0;padding:0;list-style:none;columns:2;column-gap:28px}
+.card li{break-inside:avoid;padding:8px 0 8px 16px;position:relative;font-size:.97rem}
+.card li::before{content:"";position:absolute;left:0;top:17px;width:6px;height:6px;border-radius:50%;background:var(--ink)}
+
+/* financing */
+.fin{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--rule)}
+.fin div{padding:36px 32px 8px 0}
+.fin div+div{padding-left:32px;border-left:1px solid var(--rule)}
+.fin h3{margin-bottom:12px;color:#fff}
+.fin p{color:var(--mist);font-size:.98rem}
+.fin .k{font:900 2.4rem/1 "Red Hat Display";color:var(--ice);margin-bottom:18px;display:block}
+
+/* steps */
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;counter-reset:s}
+.steps li{position:relative;padding-top:64px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;top:0;left:0;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font:900 1.2rem "Red Hat Display";color:var(--night);background:var(--c)}
+.steps li::after{content:"";position:absolute;top:22px;left:56px;right:-12px;height:2px;background:linear-gradient(90deg,var(--c),var(--n))}
+.steps li:last-child::after{display:none}
+.steps h3{margin-bottom:8px}
+.steps p{color:var(--slate);font-size:.97rem}
+
+/* references */
+.refs{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.ref{margin:0}
+.ref .ph{border-radius:14px;overflow:hidden;aspect-ratio:4/3}
+.ref img{width:100%;height:100%;object-fit:cover}
+.ref figcaption{padding:14px 2px 0}
+.ref b{display:block;font-family:"Red Hat Display";font-size:1.12rem}
+.ref span{color:var(--slate);font-size:.94rem}
+
+/* about */
+.about blockquote{margin:0 0 20px;font:700 clamp(1.4rem,2.4vw,2rem)/1.3 "Red Hat Display";color:#fff}
+.partners{display:flex;gap:16px;flex-wrap:wrap;margin-top:36px}
+.partners span{background:#fff;border-radius:12px;padding:14px 20px;display:grid;place-items:center}
+.partners img{height:30px;width:auto}
+.about .photo{border-radius:20px;overflow:hidden;aspect-ratio:4/3}
+.about .photo img{width:100%;height:100%;object-fit:cover}
+
+/* contact */
+.contact{display:grid;grid-template-columns:5fr 7fr;gap:56px}
+.who{list-style:none;padding:0;margin:28px 0 0}
+.who li{padding:16px 0;border-top:1px solid #D6DEEB}
+.who b{font-family:"Red Hat Display"}
+.who .r{color:var(--slate);font-size:.92rem}
+.who a{text-decoration:none;font-weight:600;color:var(--ink);margin-right:16px}
+.who a:hover{text-decoration:underline}
+form{background:#fff;border-radius:20px;padding:36px}
+label{display:block;font-weight:600;font-size:.92rem;margin-bottom:6px;color:var(--ink)}
+input:not([type=range]),textarea,select{width:100%;font:inherit;padding:13px 16px;border-radius:12px;border:1px solid #CBD5E5;background:var(--frost);margin-bottom:18px;color:var(--ink)}
+textarea{min-height:120px;resize:vertical}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+form .btn{background:var(--night);color:#fff}
+form .btn:hover{background:var(--deep)}
+.note{font-size:.88rem;color:var(--slate);margin:12px 0 0}
+
+footer{padding:56px 0 96px;color:var(--mist);font-size:.92rem;border-top:1px solid var(--rule)}
+footer .wrap{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
+footer p{margin:0 0 6px}
+footer a{text-decoration:none}
+footer a:hover{color:#fff}
+
+.pv{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:50;background:#fff;color:var(--ink);border-radius:999px;box-shadow:0 8px 28px rgba(0,0,0,.35);display:flex;align-items:center;gap:2px;padding:5px;font-size:.85rem}
+.pv span{padding:0 10px;color:var(--slate)}
+.pv a{padding:7px 13px;border-radius:999px;text-decoration:none;font-weight:600}
+.pv a[aria-current]{background:var(--night);color:#fff}
+
+@media (max-width:960px){
+  .nav,.top .btn{display:none}
+  .burger{display:inline-flex;margin-left:auto;background:none;color:#fff;border:1.5px solid var(--rule);border-radius:999px;padding:8px 16px;font:600 1rem "Red Hat Text";cursor:pointer}
+  .top.open .nav{display:flex;position:absolute;top:70px;left:0;right:0;flex-direction:column;background:var(--night);padding:20px 24px;border-bottom:1px solid var(--rule)}
+  .hero-grid,.split,.head,.contact{grid-template-columns:1fr;gap:36px}
+  .svc{grid-template-columns:1fr}
+  .fin{grid-template-columns:1fr}
+  .fin div+div{padding-left:0;border-left:0;border-top:1px solid var(--rule)}
+  .steps{grid-template-columns:1fr 1fr;gap:36px 24px}
+  .steps li::after{display:none}
+  .refs{grid-template-columns:1fr 1fr}
+  footer .wrap{grid-template-columns:1fr}
+  section{padding:80px 0}
+}
+@media (max-width:600px){
+  .wrap{padding:0 16px}
+  .thermo{padding:18px 16px}
+  .card ul{columns:1}
+  .card .body{padding:24px 22px 28px}
+  .steps,.refs,.row{grid-template-columns:1fr}
+  form{padding:24px 20px}
+  .readout strong{font-size:1.45rem}
+}
+</style>
+</head>
+<body>
+
+<header class="top" id="top">
+  <div class="wrap">
+    <a class="brand" href="#" aria-label="BESOL AGENCY, úvod">
+      <span class="mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="wordmark">BESOL<span>agency</span></span>
+    </a>
+    <nav class="nav" aria-label="Hlavná navigácia">
+      <a href="#termovizia">Termovízia</a>
+      <a href="#sluzby">Služby</a>
+      <a href="#financovanie">Financovanie</a>
+      <a href="#referencie">Referencie</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a class="btn" href="#kontakt">Nezáväzná obhliadka</a>
+    <button class="burger" aria-expanded="false" aria-controls="top" onclick="const t=document.getElementById('top');const o=t.classList.toggle('open');this.setAttribute('aria-expanded',o)">Menu</button>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Váš dom stráca teplo. My vieme kde a ako to zastaviť.</h1>
+      <p class="lead">Zatepľujeme a obnovujeme bytové domy po celom Slovensku. Termovíziu, projekt, financovanie aj realizáciu máte od jednej firmy.</p>
+      <div class="ctas">
+        <a class="btn" href="#kontakt">Objednať termovíziu domu</a>
+        <a class="btn line" href="#referencie">Pozrieť referencie</a>
+      </div>
+    </div>
+
+    <div class="thermo">
+      <div class="scene">
+        <div class="frame"><div class="bldg" id="bldg" role="img" aria-label="Ilustrácia termovízneho snímku bytového domu"></div></div>
+        <div class="scale" aria-hidden="true"></div>
+      </div>
+      <div class="legend"><span><i style="background:#F2542D"></i>Teplo uniká</span><span><i style="background:#1BA8E8"></i>Dom drží teplo</span></div>
+      <div class="ctrl">
+        <label for="ins"><span>Hrúbka zateplenia</span><output id="insOut" for="ins">0 cm</output></label>
+        <input type="range" id="ins" min="0" max="20" step="1" value="0" aria-describedby="insNote">
+      </div>
+      <div class="readout" aria-live="polite">
+        <div><strong id="loss">100 %</strong>únik tepla oproti dnešku</div>
+        <div><strong id="save">0 %</strong>úspora na vykurovaní</div>
+      </div>
+      <p class="disclaim" id="insNote">Ilustračná simulácia. Skutočnú úsporu vypočítame pre váš dom z termovízie a energetického auditu, zvyčajne je to až 30 %.</p>
+    </div>
+  </div>
+</section>
+
+<section id="termovizia" style="padding-top:40px">
+  <div class="wrap split">
+    <div class="thermophoto">
+      <img src="../assets/img/termovizne_snimkovanie.jpg" alt="Termovízny snímok dvoch panelových domov: nezateplený svieti žlto a červeno, zateplený je modrý" loading="lazy">
+      <span class="tag" style="left:14px">Pred zateplením</span>
+      <span class="tag" style="right:56px">Po zateplení</span>
+    </div>
+    <div>
+      <h2>Termovízia ukáže, za čo zbytočne platíte</h2>
+      <p class="muted" style="margin-top:22px">Na snímke vľavo panelák bez zateplenia, vpravo zateplený dom. Pred každou zákazkou dom nafotíme termokamerou a po dokončení snímky zopakujeme. Rozdiel uvidíte na vlastné oči.</p>
+      <ul class="checks">
+        <li>Odhalí tepelné mosty v stykoch panelov</li>
+        <li>Ukáže úniky okolo okien, balkónov a strechy</li>
+        <li>Slúži ako podklad pre projekt a rozpočet</li>
+        <li>Po obnove dokumentuje, že je problém vyriešený</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="light" id="sluzby">
+  <div class="wrap">
+    <div class="head">
+      <h2>Všetko pre obnovu domu pod jednou strechou</h2>
+      <p class="muted">Máme vlastné systémové lešenie, stroje a partie. Preto vieme dodržať termíny aj na väčších domoch.</p>
+    </div>
+    <div class="svc">
+      <article class="card">
+        <div class="img"><img src="../assets/img/img_3820_0.jpg" alt="Zateplené bytové domy v Hronskom Beňadiku" loading="lazy"></div>
+        <div class="body">
+          <h3>Building</h3>
+          <p class="sub">Stavebná činnosť a revitalizácia budov</p>
+          <ul>
+            <li>Zateplenie bytových domov</li>
+            <li>Komplexná obnova budov</li>
+            <li>Ploché strechy a hydroizolácie</li>
+            <li>Klampiarske práce</li>
+            <li>Výstavba rodinných domov</li>
+            <li>Zemné práce</li>
+            <li>Predaj stavebných materiálov</li>
+            <li>Energetický certifikát</li>
+          </ul>
+        </div>
+      </article>
+      <article class="card">
+        <div class="img"><img src="../assets/img/dsc_0254.jpg" alt="Bytový dom s novými balkónmi" loading="lazy"></div>
+        <div class="body">
+          <h3>Construction</h3>
+          <p class="sub">Montážne práce a prenájom lešenia</p>
+          <ul>
+            <li>Montáž a demontáž lešení</li>
+            <li>Prenájom lešenia Graf</li>
+            <li>Balkónové zábradlia</li>
+            <li>Striešky nad vchodmi</li>
+            <li>Prenájom stavebných strojov</li>
+            <li>Požičovňa náradia</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="financovanie">
+  <div class="wrap">
+    <div class="head">
+      <h2>Financovanie vybavíme za vás</h2>
+      <p class="muted">Väčšina obnov bytových domov sa dá financovať výhodným úverom zo štátneho fondu. Podklady pripravíme a so žiadosťou vás prevedieme.</p>
+    </div>
+    <div class="fin">
+      <div><span class="k">ŠFRB</span><h3>Štátny fond rozvoja bývania</h3><p>Máme skúsenosti so žiadosťami o úver zo ŠFRB v rámci vládneho programu zatepľovania.</p></div>
+      <div><span class="k">Banka</span><h3>Doplnkový komerčný úver</h3><p>Ak zdroje zo ŠFRB nepokryjú celú obnovu, zabezpečíme aj úver z banky.</p></div>
+      <div><span class="k">ECB</span><h3>Energetický certifikát</h3><p>Dodáme certifikát budovy podľa zákona č. 555/2005 Z. z. Potrebujete ho po obnove, pri predaji aj prenájme.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="light">
+  <div class="wrap">
+    <div class="head">
+      <h2>Ako prebieha obnova</h2>
+      <p class="muted">Štyri kroky od prvého telefonátu po odovzdanie hotového domu.</p>
+    </div>
+    <ol class="steps">
+      <li style="--c:#F2542D;--n:#F7D23E"><h3>Obhliadka a termovízia</h3><p>Prídeme na dom a nafotíme, kde uniká teplo.</p></li>
+      <li style="--c:#F7D23E;--n:#4FE07A"><h3>Projekt a rozpočet</h3><p>Pripravíme riešenie a podklady pre schôdzu vlastníkov.</p></li>
+      <li style="--c:#4FE07A;--n:#1BA8E8"><h3>Financovanie</h3><p>Vybavíme úver zo ŠFRB, prípadne z banky.</p></li>
+      <li style="--c:#1BA8E8;--n:#1BA8E8"><h3>Realizácia</h3><p>Obnovíme dom a odovzdáme ho aj s certifikátom.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="light" id="referencie" style="padding-top:20px">
+  <div class="wrap">
+    <div class="head">
+      <h2>Domy, ktoré už nemrznú</h2>
+      <p class="muted">Pracujeme pre správcovské spoločnosti, spoločenstvá vlastníkov bytov, obce aj súkromných vlastníkov.</p>
+    </div>
+    <div class="refs">
+      <figure class="ref"><div class="ph"><img src="../assets/img/1_4.jpg" alt="Bytový dom v Tlmačoch po obnove" loading="lazy"></div><figcaption><b>Bytový dom, Tlmače</b><span>Zateplenie, strecha, balkóny, rozvody</span></figcaption></figure>
+      <figure class="ref"><div class="ph"><img src="../assets/img/img_0355.jpg" alt="Bytový dom vo Vrábľoch" loading="lazy"></div><figcaption><b>Bytový dom, Vráble</b><span>Obnovu predstavil časopis DOMA</span></figcaption></figure>
+      <figure class="ref"><div class="ph"><img src="../assets/img/dsc_0147.jpg" alt="Zateplený bytový dom so zelenou fasádou" loading="lazy"></div><figcaption><b>Bytový dom</b><span>Zateplenie a nová fasáda</span></figcaption></figure>
+      <figure class="ref"><div class="ph"><img src="../assets/img/12.jpg" alt="Bytový dom v Malom Cetíne" loading="lazy"></div><figcaption><b>Bytový dom, Malý Cetín</b><span>Zateplenie obvodového plášťa</span></figcaption></figure>
+      <figure class="ref"><div class="ph"><img src="../assets/img/img_8787_1_1.jpg" alt="Rodinný dom v Novej Bani" loading="lazy"></div><figcaption><b>Rodinný dom, Nová Baňa</b><span>Zateplenie a fasáda</span></figcaption></figure>
+      <figure class="ref"><div class="ph"><img src="../assets/img/20190819_162026.jpg" alt="Nová umyváreň v materskej škole v Novej Bani" loading="lazy"></div><figcaption><b>Dve materské škôlky, Nová Baňa</b><span>Umyvárne, podlahy, dvere</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="about">
+  <div class="wrap split">
+    <div>
+      <h2 style="margin-bottom:28px">Viac ako desať rokov na stavbách po celom Slovensku</h2>
+      <p class="muted">BESOL AGENCY je realizačná firma z Orovnice pri Novej Bani. Licencie TSÚS na kontaktné zatepľovacie systémy, pravidelné školenia u výrobcov a overené materiály sú pre nás samozrejmosť.</p>
+      <blockquote style="margin-top:32px">„Spokojný zákazník je pre nás výhra a splnenie toho najvyššieho cieľa.“</blockquote>
+      <p class="muted"><b style="color:#fff">Vladimír Bratko</b>, konateľ</p>
+      <div class="partners" aria-label="Materiáloví partneri">
+        <span><img src="../assets/img/logo_weber.png" alt="Weber"></span>
+        <span><img src="../assets/img/logo_stomix.png" alt="Stomix"></span>
+        <span><img src="../assets/img/logo_namit.png" alt="Namit"></span>
+      </div>
+    </div>
+    <div class="photo"><img src="../assets/img/lesenie_graf2.jpg" alt="Lešenie Graf na zatepľovanom dome" loading="lazy"></div>
+  </div>
+</section>
+
+<section class="light" id="kontakt">
+  <div class="wrap contact">
+    <div>
+      <h2>Objednajte si obhliadku domu</h2>
+      <p class="muted" style="margin-top:20px">Obhliadka je zadarmo. Ozveme sa do dvoch pracovných dní.</p>
+      <ul class="who">
+        <li><b>Vladimír Bratko</b> <span class="r">konateľ</span><br><a href="tel:+421908198707">+421 908 198 707</a><a href="mailto:besol@besol.sk">besol@besol.sk</a></li>
+        <li><b>Ing. Silvia Tršová</b> <span class="r">kancelária</span><br><a href="tel:+421917360985">+421 917 360 985</a><a href="mailto:kancelaria@besol.sk">kancelaria@besol.sk</a></li>
+        <li><b>Ing. Michal Žarnovický</b> <span class="r">rozpočtár</span></li>
+        <li><b>Ing. Mária Vicenová</b> <span class="r">ekonómka</span></li>
+      </ul>
+    </div>
+    <form onsubmit="event.preventDefault();this.querySelector('.note').textContent='Toto je náhľad dizajnu. Po spustení webu sa správa odošle priamo do kancelárie.'">
+      <div class="row">
+        <div><label for="b-name">Meno a priezvisko</label><input id="b-name" required autocomplete="name"></div>
+        <div><label for="b-tel">Telefón</label><input id="b-tel" type="tel" autocomplete="tel"></div>
+      </div>
+      <label for="b-mail">E-mail</label><input id="b-mail" type="email" required autocomplete="email">
+      <div class="row">
+        <div><label for="b-type">Typ budovy</label><select id="b-type"><option>Bytový dom</option><option>Rodinný dom</option><option>Verejná budova</option><option>Iné</option></select></div>
+        <div><label for="b-flats">Počet bytov</label><input id="b-flats" inputmode="numeric" placeholder="napr. 24"></div>
+      </div>
+      <label for="b-msg">Správa</label><textarea id="b-msg" required placeholder="Adresa domu a čo potrebujete riešiť"></textarea>
+      <button class="btn" type="submit">Odoslať správu</button>
+      <p class="note" role="status"></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <p class="wordmark" style="color:#fff;margin-bottom:14px">BESOL<span style="font-weight:500;color:var(--ice);margin-left:6px">agency</span></p>
+      <p>BESOL, s. r. o., 966 52 Orovnica 18</p>
+      <p>IČO 47 579 145, DIČ 2023968276</p>
+      <p>OR Okresného súdu Banská Bystrica, oddiel Sro, vložka č. 26045/S</p>
+    </div>
+    <div><p><a href="#termovizia">Termovízia</a></p><p><a href="#sluzby">Služby</a></p><p><a href="#financovanie">Financovanie</a></p><p><a href="#referencie">Referencie</a></p></div>
+    <div><p><a href="tel:+421908198707">+421 908 198 707</a></p><p><a href="mailto:besol@besol.sk">besol@besol.sk</a></p><p style="margin-top:18px">© 2026 BESOL AGENCY</p></div>
+  </div>
+</footer>
+
+<nav class="pv" aria-label="Prepínač návrhov"><span>Návrh</span><a href="../a/">A</a><a href="../b/" aria-current="page">B</a><a href="../c/">C</a><a href="../">Všetky</a></nav>
+
+<script>
+(function(){
+  // thermal colour ramp, cold to hot
+  const stops=[[0,[27,31,158]],[.3,[27,168,232]],[.48,[79,224,122]],[.64,[247,231,51]],[.84,[242,84,45]],[1,[255,244,240]]];
+  function ramp(t){
+    t=Math.max(0,Math.min(1,t));
+    for(let i=1;i<stops.length;i++){
+      if(t<=stops[i][0]){
+        const [a,ca]=stops[i-1],[b,cb]=stops[i],k=(t-a)/(b-a);
+        return 'rgb('+ca.map((c,j)=>Math.round(c+(cb[j]-c)*k)).join(',')+')';
+      }
+    }
+    return 'rgb(255,244,240)';
+  }
+  const cols=8,rows=9,b=document.getElementById('bldg'),cells=[];
+  // deterministic pseudo-random so the picture is the same on every load
+  let seed=7;const rnd=()=>(seed=(seed*16807)%2147483647)/2147483647;
+  for(let r=0;r<rows;r++)for(let c=0;c<cols;c++){
+    const el=document.createElement('div');el.className='cell';
+    if(r===rows-1&&(c===3||c===4))el.classList.add('door');
+    // panel joints (between columns 1-2 and 5-6) and the top floor leak the most
+    let h=.62+rnd()*.14;
+    if(c===2||c===5)h+=.16;
+    if(r===0)h+=.1;
+    if(r===rows-1)h-=.06;
+    el._h=Math.min(h,.98);el._w=Math.min(h+.12,1);
+    b.appendChild(el);cells.push(el);
+  }
+  const ins=document.getElementById('ins'),out=document.getElementById('insOut'),loss=document.getElementById('loss'),save=document.getElementById('save');
+  function draw(){
+    const cm=+ins.value,k=1-Math.exp(-cm/6); // diminishing returns with thickness
+    cells.forEach(el=>{
+      el.style.backgroundColor=ramp(el._h*(1-.78*k));
+      el.style.setProperty('--win',ramp(el._w*(1-.45*k)));
+    });
+    out.textContent=cm+' cm';
+    ins.setAttribute('aria-valuetext',cm+' centimetrov izolácie');
+    loss.textContent=Math.round(100-72*k)+' %';
+    save.textContent='až '+Math.round(30*k)+' %';
+    if(cm===0)save.textContent='0 %';
+  }
+  ins.addEventListener('input',draw);draw();
+  // one orchestrated moment: on first view, insulate the house once to show what the slider does
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduce){
+    let v=0;const target=14;
+    setTimeout(function step(){ if(ins.dataset.touched)return; v++; ins.value=v; draw(); if(v<target)setTimeout(step,90); },900);
+    ins.addEventListener('pointerdown',()=>ins.dataset.touched=1);
+    ins.addEventListener('keydown',()=>ins.dataset.touched=1);
+  }
+})();
+</script>
+</body>
+</html>

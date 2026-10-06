@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="sk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>BESOL AGENCY | Obnova bytových domov</title>
+<meta name="description" content="Zatepľovanie a komplexná obnova bytových domov od A po Z, vrátane vybavenia financovania. Prenájom lešenia a stavebnej techniky.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --concrete:#ECEDEA;
+  --plaster:#F8F8F6;
+  --graphite:#24282C;
+  --stone:#6B7075;
+  --line:#D3D5D1;
+  --red:#D7182A;
+  --green:#5E9F33;
+  --blue:#1F4E9C;
+  --wrap:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--concrete);color:var(--graphite);font:400 17px/1.6 "Archivo",system-ui,sans-serif;font-variation-settings:"wdth" 100}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+h1,h2,h3{text-wrap:balance;font-variation-settings:"wdth" 118;font-weight:800;line-height:1.02;letter-spacing:-.01em;margin:0}
+h1{font-size:clamp(2.5rem,5vw,4.5rem)}
+h2{font-size:clamp(2rem,3.8vw,3.3rem)}
+h3{font-size:1.35rem;line-height:1.15}
+p{margin:0 0 1em;max-width:62ch}
+.lead{font-size:1.2rem;color:var(--stone);max-width:46ch}
+
+/* header */
+.top{position:sticky;top:0;z-index:20;background:rgba(236,237,234,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:32px;height:72px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.mark{width:34px;height:34px;position:relative;flex:none}
+.mark i{position:absolute;width:18px;height:18px}
+.mark i:nth-child(1){background:var(--red);right:0;top:0;width:22px;height:22px}
+.mark i:nth-child(2){background:var(--green);left:0;top:6px;width:12px;height:12px}
+.mark i:nth-child(3){background:var(--blue);left:0;bottom:0;width:22px;height:12px}
+.wordmark{font-variation-settings:"wdth" 125;font-weight:900;font-size:1.25rem;letter-spacing:.02em;line-height:1}
+.wordmark small{display:block;font-weight:500;font-size:.62rem;letter-spacing:.36em;color:var(--stone);margin-top:3px}
+.nav{display:flex;gap:26px;margin-left:auto}
+.nav a{text-decoration:none;font-weight:500;font-size:.98rem}
+.nav a:hover{color:var(--red)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;font-weight:700;text-decoration:none;border:2px solid var(--graphite);background:var(--graphite);color:#fff;font-size:1rem;cursor:pointer;font-family:inherit}
+.btn:hover{background:var(--red);border-color:var(--red)}
+.btn.ghost{background:transparent;color:var(--graphite)}
+.btn.ghost:hover{background:var(--graphite);color:#fff}
+.top .btn{padding:10px 16px}
+.burger{display:none}
+
+/* hero */
+.hero{padding:56px 0 0}
+.hero-grid{display:grid;grid-template-columns:6fr 6fr;gap:48px;align-items:end}
+.hero h1{margin-bottom:28px}
+.hero .lead{margin-bottom:32px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:8px}
+.hero-photo{position:relative;aspect-ratio:4/3.3;overflow:hidden}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:60% 40%}
+.hero-photo figcaption{position:absolute;left:0;bottom:0;background:var(--plaster);padding:12px 18px;font-size:.9rem;color:var(--stone)}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);margin-top:56px}
+.facts div{padding:22px 24px 26px 0}
+.facts b{display:block;font-variation-settings:"wdth" 118;font-weight:800;font-size:1.25rem;margin-bottom:4px}
+.facts span{color:var(--stone);font-size:.95rem}
+
+section{padding:110px 0}
+.sec-head{display:grid;grid-template-columns:5fr 7fr;gap:48px;margin-bottom:56px;align-items:end}
+.sec-head p{color:var(--stone);margin:0}
+
+/* swatch references — the signature */
+.refs{background:var(--plaster)}
+.fan{display:grid;grid-template-columns:repeat(12,1fr);gap:28px}
+.ref{grid-column:span 4;background:#fff;border:1px solid var(--line);display:flex;flex-direction:column}
+.ref.wide{grid-column:span 8}
+.ref .ph{aspect-ratio:4/3;overflow:hidden}
+.ref.wide .ph{aspect-ratio:16/8.4}
+.ref img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.ref:hover img{transform:scale(1.03)}
+.chips{display:flex;height:22px}
+.chips span{flex:1}
+.ref .txt{padding:20px 22px 24px}
+.ref .where{font-size:.9rem;color:var(--stone);margin-bottom:6px}
+.ref h3{margin-bottom:8px}
+.ref p{font-size:.96rem;margin:0;color:var(--stone)}
+.chipnames{display:flex;gap:14px;margin-top:14px;font-size:.78rem;color:var(--stone)}
+.chipnames i{display:inline-block;width:10px;height:10px;margin-right:5px;vertical-align:-1px;border:1px solid rgba(0,0,0,.12)}
+
+/* services */
+.svc{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);background:var(--plaster)}
+.svc article{padding:44px 44px 48px;position:relative}
+.svc article+article{border-left:1px solid var(--line)}
+.svc .tag{display:inline-block;width:36px;height:8px;margin-bottom:26px}
+.svc h3{font-size:1.9rem;margin-bottom:6px}
+.svc .sub{color:var(--stone);margin-bottom:26px}
+.svc ul{list-style:none;padding:0;margin:0 0 28px}
+.svc li{padding:12px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px}
+.svc li:last-child{border-bottom:1px solid var(--line)}
+.svc .img{aspect-ratio:16/9;overflow:hidden;margin:-44px -44px 36px}
+.svc .img img{width:100%;height:100%;object-fit:cover}
+
+/* extras */
+.extras{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:28px}
+.extras div{padding:28px;border:1px solid var(--line)}
+.extras h3{font-size:1.15rem;margin-bottom:10px}
+.extras p{font-size:.96rem;color:var(--stone);margin:0}
+
+/* process */
+.proc{background:var(--graphite);color:#fff}
+.proc .sec-head p{color:#B9BDC1}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;counter-reset:s;list-style:none;margin:0;padding:0}
+.steps li{padding:30px 28px 10px 0;border-top:2px solid #474C52;position:relative}
+.steps li::before{counter-increment:s;content:counter(s);font-variation-settings:"wdth" 125;font-weight:900;font-size:3.6rem;line-height:1;display:block;margin-bottom:22px;color:#fff}
+.steps li:nth-child(1){border-top-color:var(--red)}
+.steps li:nth-child(2){border-top-color:#E9E3D6}
+.steps li:nth-child(3){border-top-color:var(--green)}
+.steps li:nth-child(4){border-top-color:var(--blue)}
+.steps h3{margin-bottom:10px}
+.steps p{color:#B9BDC1;font-size:.96rem}
+
+/* benefits */
+.benefit-grid{display:grid;grid-template-columns:5fr 7fr;gap:48px;align-items:start}
+.benefit-grid .photo{aspect-ratio:3/4;overflow:hidden}
+.benefit-grid .photo img{width:100%;height:100%;object-fit:cover}
+.blist{list-style:none;margin:36px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 32px}
+.blist li{padding:16px 0;border-top:1px solid var(--line);font-weight:500}
+.blist li b{color:var(--red)}
+
+/* about */
+.about{background:var(--plaster)}
+.about-grid{display:grid;grid-template-columns:7fr 5fr;gap:64px;align-items:center}
+blockquote{margin:0;font-variation-settings:"wdth" 110;font-weight:600;font-size:clamp(1.4rem,2.4vw,2rem);line-height:1.25}
+.sig{margin-top:22px;color:var(--stone)}
+.sig b{color:var(--graphite)}
+.partners{display:flex;gap:40px;align-items:center;flex-wrap:wrap;margin-top:40px;padding-top:28px;border-top:1px solid var(--line)}
+.partners img{height:34px;width:auto;filter:grayscale(1);opacity:.8}
+.partners img:hover{filter:none;opacity:1}
+.about .photo{aspect-ratio:4/5;overflow:hidden}
+.about .photo img{width:100%;height:100%;object-fit:cover}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:6fr 6fr;gap:64px}
+.people{list-style:none;padding:0;margin:32px 0 0}
+.people li{display:grid;grid-template-columns:1fr auto;gap:4px 16px;padding:18px 0;border-top:1px solid var(--line)}
+.people .role{color:var(--stone);font-size:.92rem}
+.people a{text-decoration:none;font-weight:600}
+.people a:hover{color:var(--red)}
+form{background:#fff;border:1px solid var(--line);padding:36px}
+label{display:block;font-weight:600;font-size:.92rem;margin-bottom:6px}
+input,textarea,select{width:100%;font:inherit;padding:12px 14px;border:1px solid #BFC2BE;background:var(--plaster);margin-bottom:18px;color:var(--graphite)}
+textarea{min-height:120px;resize:vertical}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.note{font-size:.85rem;color:var(--stone);margin-top:12px}
+
+footer{background:var(--graphite);color:#B9BDC1;padding:56px 0 90px;font-size:.92rem}
+footer .wrap{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
+footer .wordmark{color:#fff}
+footer a{text-decoration:none}
+footer a:hover{color:#fff}
+footer p{margin:0 0 6px}
+
+/* preview switcher */
+.pv{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:50;background:#fff;border:1px solid var(--line);box-shadow:0 6px 24px rgba(0,0,0,.15);display:flex;align-items:center;gap:4px;padding:6px;font-size:.85rem}
+.pv span{padding:0 10px;color:var(--stone)}
+.pv a{padding:7px 12px;text-decoration:none;font-weight:600}
+.pv a[aria-current]{background:var(--graphite);color:#fff}
+
+@media (max-width:960px){
+  .nav,.top .btn{display:none}
+  .burger{display:inline-flex;margin-left:auto;background:none;border:2px solid var(--graphite);padding:8px 12px;font:inherit;font-weight:700;cursor:pointer}
+  .top.open .nav{display:flex;position:absolute;top:72px;left:0;right:0;flex-direction:column;background:var(--concrete);padding:20px 24px;border-bottom:1px solid var(--line)}
+  .hero-grid,.sec-head,.benefit-grid,.about-grid,.contact-grid{grid-template-columns:1fr;gap:32px}
+  .facts{grid-template-columns:1fr 1fr}
+  .fan{grid-template-columns:1fr 1fr;gap:20px}
+  .ref,.ref.wide{grid-column:span 1}
+  .ref.wide .ph{aspect-ratio:4/3}
+  .svc{grid-template-columns:1fr}
+  .svc article+article{border-left:0;border-top:1px solid var(--line)}
+  .extras{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr;gap:0 24px}
+  footer .wrap{grid-template-columns:1fr}
+  section{padding:80px 0}
+}
+@media (max-width:600px){
+  .wrap{padding:0 16px}
+  .fan{grid-template-columns:1fr}
+  .blist,.steps,.row{grid-template-columns:1fr}
+  .svc article{padding:28px 22px 32px}
+  .svc .img{margin:-28px -22px 28px}
+  form{padding:24px}
+  .people li{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="top" id="top">
+  <div class="wrap">
+    <a class="brand" href="#" aria-label="BESOL AGENCY, úvod">
+      <span class="mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="wordmark">BESOL<small>AGENCY</small></span>
+    </a>
+    <nav class="nav" aria-label="Hlavná navigácia">
+      <a href="#referencie">Referencie</a>
+      <a href="#sluzby">Služby</a>
+      <a href="#postup">Ako pracujeme</a>
+      <a href="#o-nas">O nás</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a class="btn" href="tel:+421908198707">+421 908 198 707</a>
+    <button class="burger" aria-expanded="false" aria-controls="top" onclick="const t=document.getElementById('top');const o=t.classList.toggle('open');this.setAttribute('aria-expanded',o)">Menu</button>
+  </div>
+</header>
+
+<main>
+<section class="hero" style="padding-bottom:0">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <h1>Obnovíme váš bytový dom od A po Z.</h1>
+        <p class="lead">Zateplenie, strecha, balkóny aj spoločné priestory. Vybavíme projekt, financovanie zo ŠFRB a úver v banke. Vy nemusíte nič riešiť.</p>
+        <div class="ctas">
+          <a class="btn" href="#kontakt">Dohodnúť obhliadku</a>
+          <a class="btn ghost" href="#referencie">Pozrieť referencie</a>
+        </div>
+      </div>
+      <figure class="hero-photo" style="margin:0">
+        <img src="../assets/img/dsc_0923.jpg" alt="Zateplený bytový dom s novou sivo-červenou fasádou" fetchpriority="high">
+        <figcaption>Zateplenie a nová fasáda bytového domu</figcaption>
+      </figure>
+    </div>
+    <div class="facts">
+      <div><b>Až o 30 %</b><span>nižšie náklady na energie po obnove</span></div>
+      <div><b>ŠFRB a banky</b><span>pomôžeme so žiadosťou aj úverom</span></div>
+      <div><b>Celé Slovensko</b><span>sídlo v Orovnici pri Novej Bani</span></div>
+      <div><b>Licencia TSÚS</b><span>na kontaktné zatepľovacie systémy</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="refs" id="referencie">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Domy, ktoré sme obnovili</h2>
+      <p>Farby fasády vyberáme spolu s vlastníkmi bytov. Pod každou fotkou je paleta odtieňov daného domu.</p>
+    </div>
+    <div class="fan">
+      <article class="ref wide">
+        <div class="ph"><img src="../assets/img/1_4.jpg" alt="Obnovený bytový dom v Tlmačoch" loading="lazy"></div>
+        <div class="chips" aria-hidden="true"><span style="background:#E3D6BE"></span><span style="background:#C9A27A"></span><span style="background:#A0502F"></span></div>
+        <div class="txt">
+          <div class="where">Tlmače</div>
+          <h3>Bytový dom, komplexná obnova</h3>
+          <p>Zateplenie obvodového plášťa, rekonštrukcia strechy, komínov a balkónov, nové stúpačky, bleskozvod a obnova spoločných priestorov. A ako bonus štyri parkové lavičky pred vchodom.</p>
+        </div>
+      </article>
+      <article class="ref">
+        <div class="ph"><img src="../assets/img/img_3820_0.jpg" alt="Bytové domy v Hronskom Beňadiku" loading="lazy"></div>
+        <div class="chips" aria-hidden="true"><span style="background:#F2F2EF"></span><span style="background:#B03A2E"></span><span style="background:#2E3540"></span></div>
+        <div class="txt">
+          <div class="where">Hronský Beňadik</div>
+          <h3>Bytové domy</h3>
+          <p>Zateplenie a nová fasáda s farebnými balkónmi.</p>
+        </div>
+      </article>
+      <article class="ref">
+        <div class="ph"><img src="../assets/img/img_0355.jpg" alt="Bytový dom vo Vrábľoch" loading="lazy"></div>
+        <div class="chips" aria-hidden="true"><span style="background:#F1F1EE"></span><span style="background:#8DB65A"></span><span style="background:#5E6166"></span></div>
+        <div class="txt">
+          <div class="where">Vráble</div>
+          <h3>Bytový dom</h3>
+          <p>O tejto obnove písal aj časopis DOMA: aj malý dom si zaslúži veľkú pozornosť.</p>
+        </div>
+      </article>
+      <article class="ref">
+        <div class="ph"><img src="../assets/img/12.jpg" alt="Bytový dom v Malom Cetíne" loading="lazy"></div>
+        <div class="chips" aria-hidden="true"><span style="background:#ECECEA"></span><span style="background:#9AA0A6"></span><span style="background:#B9D7A5"></span></div>
+        <div class="txt">
+          <div class="where">Malý Cetín</div>
+          <h3>Bytový dom</h3>
+          <p>Zateplenie, nová fasáda a vstupy.</p>
+        </div>
+      </article>
+      <article class="ref">
+        <div class="ph"><img src="../assets/img/20190819_162026.jpg" alt="Zrekonštruovaná umyváreň v materskej škole" loading="lazy"></div>
+        <div class="chips" aria-hidden="true"><span style="background:#FFFFFF"></span><span style="background:#7FB548"></span><span style="background:#C7B79C"></span></div>
+        <div class="txt">
+          <div class="where">Nová Baňa</div>
+          <h3>Dve materské škôlky</h3>
+          <p>Nové umyvárne s rozvodmi vody, podlahy, dvere a maľovanie na Štúrovej a Nábrežnej ulici.</p>
+        </div>
+      </article>
+      <article class="ref">
+        <div class="ph"><img src="../assets/img/012_0.jpg" alt="Nová kúpeľňa v Domove sociálnych služieb Hrabiny" loading="lazy"></div>
+        <div class="chips" aria-hidden="true"><span style="background:#F4F4F2"></span><span style="background:#B79A78"></span><span style="background:#2C4E8A"></span></div>
+        <div class="txt">
+          <div class="where">Hrabiny</div>
+          <h3>Domov sociálnych služieb</h3>
+          <p>Kompletná obnova kúpeľne a WC s novými vaňami, sprchami a umývadlami.</p>
+        </div>
+      </article>
+      <article class="ref wide">
+        <div class="ph"><img src="../assets/img/rska_samorin0.jpg" alt="Letecký pohľad na areál v Šamoríne" loading="lazy"></div>
+        <div class="chips" aria-hidden="true"><span style="background:#6E8F4E"></span><span style="background:#C9CCC6"></span><span style="background:#3E5F86"></span></div>
+        <div class="txt">
+          <div class="where">Šamorín</div>
+          <h3>Areál RŠKA, hydroizolácie a obklady</h3>
+          <p>Hydroizolácie a obkladové práce vo veľkom športovom areáli.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="sluzby">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Čo pre vás urobíme</h2>
+      <p>Práce delíme do dvoch oblastí. Na stavbe máte jedného dodávateľa, ktorý má vlastné lešenie, stroje aj ľudí.</p>
+    </div>
+    <div class="svc">
+      <article>
+        <div class="img"><img src="../assets/img/dsc_0147.jpg" alt="Zateplený bytový dom so zelenou fasádou" loading="lazy"></div>
+        <span class="tag" style="background:var(--red)"></span>
+        <h3>Building</h3>
+        <p class="sub">Stavebná činnosť a komplexná revitalizácia budov</p>
+        <ul>
+          <li>Zatepľovanie a obnova bytových domov</li>
+          <li>Zateplenie a hydroizolácie plochých striech</li>
+          <li>Klampiarske práce</li>
+          <li>Výstavba rodinných domov a iných stavieb</li>
+          <li>Predaj stavebných materiálov a zemné práce</li>
+        </ul>
+      </article>
+      <article>
+        <div class="img"><img src="../assets/img/lesenie_graf2.jpg" alt="Systémové lešenie Graf na bytovom dome" loading="lazy"></div>
+        <span class="tag" style="background:var(--blue)"></span>
+        <h3>Construction</h3>
+        <p class="sub">Montážne práce a prenájom lešenia</p>
+        <ul>
+          <li>Montáž a demontáž lešení</li>
+          <li>Prenájom systémového lešenia Graf</li>
+          <li>Balkónové zábradlia na mieru</li>
+          <li>Striešky nad vchodmi z lexanu a plechu</li>
+          <li>Prenájom strojov a požičovňa náradia</li>
+        </ul>
+      </article>
+    </div>
+    <div class="extras">
+      <div><h3>Termovízne snímkovanie</h3><p>Pred zateplením ukážeme, kde dom stráca teplo. Po obnove snímky potvrdia, že je to vyriešené.</p></div>
+      <div><h3>Financovanie obnovy</h3><p>Pripravíme žiadosť do Štátneho fondu rozvoja bývania a zabezpečíme aj doplnkový úver z banky.</p></div>
+      <div><h3>Energetický certifikát</h3><p>Dodáme certifikát budovy podľa zákona č. 555/2005 Z. z., potrebný pri obnove, predaji aj prenájme.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="proc" id="postup">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Ako prebieha obnova</h2>
+      <p>Od prvej schôdze vlastníkov po odovzdanie hotového domu. Celý čas máte jednu kontaktnú osobu.</p>
+    </div>
+    <ol class="steps">
+      <li><h3>Obhliadka a termovízia</h3><p>Prídeme na dom, nafotíme úniky tepla a prejdeme s vami, čo treba opraviť.</p></li>
+      <li><h3>Projekt a rozpočet</h3><p>Pripravíme projekt, rozpočet a podklady pre schôdzu vlastníkov.</p></li>
+      <li><h3>Financovanie</h3><p>Vybavíme úver zo ŠFRB, prípadne doplnkový úver z banky.</p></li>
+      <li><h3>Realizácia a odovzdanie</h3><p>Postavíme vlastné lešenie, dom obnovíme a odovzdáme aj s energetickým certifikátom.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="wrap benefit-grid">
+    <div class="photo"><img src="../assets/img/img_3881.jpg" alt="Rodinný dom v Novej Bani po zateplení" loading="lazy"></div>
+    <div>
+      <h2>Čo vám obnova domu prinesie</h2>
+      <ul class="blist">
+        <li>Náklady na energie nižšie <b>až o 30 %</b></li>
+        <li>Nižšie prevádzkové náklady domu</li>
+        <li>Lepší technický stav budovy</li>
+        <li>Teplejšie a tichšie byty</li>
+        <li>Krajšie prostredie pre vás a vaše deti</li>
+        <li>Dlhšia životnosť domu</li>
+        <li>Vyššia trhová cena bytov</li>
+        <li>Menej starostí, všetko vybavíme my</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="o-nas">
+  <div class="wrap about-grid">
+    <div>
+      <h2 style="margin-bottom:32px">Rodinná firma z Orovnice</h2>
+      <p>Viac ako desať rokov zatepľujeme, obnovujeme a rekonštruujeme stavby po celom Slovensku. Pracujeme pre správcovské spoločnosti, spoločenstvá vlastníkov bytov aj súkromných vlastníkov. Každú zákazku riešime podľa toho, čo konkrétny dom potrebuje.</p>
+      <blockquote style="margin-top:36px">„Robte to, čo milujete, a milujte to, čo robíte. Potom to pre vás nebude práca.“</blockquote>
+      <p class="sig"><b>Vladimír Bratko</b>, konateľ BESOL AGENCY</p>
+      <div class="partners" aria-label="Materiáloví partneri">
+        <img src="../assets/img/logo_weber.png" alt="Weber">
+        <img src="../assets/img/logo_stomix.png" alt="Stomix">
+        <img src="../assets/img/logo_namit.png" alt="Namit">
+      </div>
+    </div>
+    <div class="photo"><img src="../assets/img/dsc_0230.jpg" alt="Strieška z lexanu nad balkónom" loading="lazy"></div>
+  </div>
+</section>
+
+<section id="kontakt">
+  <div class="wrap contact-grid">
+    <div>
+      <h2>Napíšte nám o vašom dome</h2>
+      <p class="lead" style="margin-top:20px">Ozveme sa do dvoch pracovných dní a dohodneme obhliadku. Je zadarmo a nezáväzná.</p>
+      <ul class="people">
+        <li><div><b>Vladimír Bratko</b><div class="role">konateľ</div></div><div><a href="tel:+421908198707">+421 908 198 707</a><br><a href="mailto:besol@besol.sk">besol@besol.sk</a></div></li>
+        <li><div><b>Ing. Silvia Tršová</b><div class="role">kancelária</div></div><div><a href="tel:+421917360985">+421 917 360 985</a><br><a href="mailto:kancelaria@besol.sk">kancelaria@besol.sk</a></div></li>
+        <li><div><b>Ing. Michal Žarnovický</b><div class="role">rozpočtár</div></div><div></div></li>
+        <li><div><b>Ing. Mária Vicenová</b><div class="role">ekonómka</div></div><div></div></li>
+      </ul>
+    </div>
+    <form onsubmit="event.preventDefault();this.querySelector('.note').textContent='Toto je náhľad dizajnu. Po spustení webu sa správa odošle priamo do kancelárie.'">
+      <div class="row">
+        <div><label for="a-name">Meno a priezvisko</label><input id="a-name" required autocomplete="name"></div>
+        <div><label for="a-tel">Telefón</label><input id="a-tel" type="tel" autocomplete="tel"></div>
+      </div>
+      <label for="a-mail">E-mail</label><input id="a-mail" type="email" required autocomplete="email">
+      <label for="a-type">O čo máte záujem</label>
+      <select id="a-type"><option>Obnova bytového domu</option><option>Zateplenie rodinného domu</option><option>Strecha a hydroizolácia</option><option>Prenájom lešenia alebo techniky</option><option>Iné</option></select>
+      <label for="a-msg">Správa</label><textarea id="a-msg" required placeholder="Napr. adresa domu, počet bytov, čo potrebujete opraviť"></textarea>
+      <button class="btn" type="submit">Odoslať správu</button>
+      <p class="note" role="status"></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="wordmark" style="margin-bottom:18px">BESOL<small>AGENCY</small></div>
+      <p>BESOL, s. r. o., 966 52 Orovnica 18</p>
+      <p>IČO 47 579 145, DIČ 2023968276</p>
+      <p>Zapísaná v OR Okresného súdu Banská Bystrica, oddiel Sro, vložka č. 26045/S</p>
+    </div>
+    <div>
+      <p><a href="#sluzby">Služby</a></p><p><a href="#referencie">Referencie</a></p><p><a href="#o-nas">O nás</a></p><p><a href="#kontakt">Kontakt</a></p>
+    </div>
+    <div>
+      <p><a href="tel:+421908198707">+421 908 198 707</a></p>
+      <p><a href="mailto:besol@besol.sk">besol@besol.sk</a></p>
+      <p style="margin-top:18px">© 2026 BESOL AGENCY</p>
+    </div>
+  </div>
+</footer>
+
+<nav class="pv" aria-label="Prepínač návrhov"><span>Návrh</span><a href="../a/" aria-current="page">A</a><a href="../b/">B</a><a href="../c/">C</a><a href="../">Všetky</a></nav>
+</body>
+</html>
